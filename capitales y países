@@ -1,0 +1,54 @@
+BIANCA MARIELA GONZÁLEZ HERNÁNDEZ
+Calificación: 3/5
+
+______________________________________
+
+package codigo7;
+
+import java.util.HashMap; // importación
+import java.util.Scanner; // Importación
+
+public class Codigo7 {
+	public static void main(String[] args) { // agregar public static void main(String[] args) {
+
+	    Scanner s = new Scanner(System.in); // clase scanner inicializada con System.in
+
+	    HashMap<String, String> capitales = new HashMap<>();  // string debido a que se trata de cadenas de texto (los paises y su capital)
+
+	    capitales.put("Canadá", "Otawwa");
+	    capitales.put("Estados Unidos", "Washington DC");
+	    capitales.put("México", "México DF");
+	    capitales.put("Belice", "Belmopán");
+	    capitales.put("Costa rica", "San José");
+	    capitales.put("El Salvador", "San Salvador"); // añadir la capital que falta
+	    capitales.put("Guatemala", "Ciudad de Guatemala");
+	    capitales.put("Honduras", "Tegucigalpa");
+	    capitales.put("Nicaragua", "Managua");
+	    capitales.put("Panamá", "Panamá");
+	   
+	    String c = ""; // le falta la r a string
+	    do {
+	      System.out.println("Escribe el nombre de un país y te diré su capital: "); // en lugar de in, debe decir out y le puse ln
+	      c = s.nextLine(); // debería decir "next line
+	      
+	      if (!c.equals("salir")) { // se cambia por equals
+	        if (capitales.containsKey(c)) { // en lugar de ca, debe decir capitales
+	          String pais; // creación de variable local "pais"
+			System.out.println("La capital de " + c); // debe decir completo system.out.println. Además
+	          //debe concatener el mensaje correctamente, "la capital de + pais + "es" + capitales"
+	          System.out.println(" es " + capitales.get(c)); // capitales en lugar de ca
+	        } else {
+	          System.out.print("No conozco la respuesta ");
+	          System.out.print("¿cuál es la capital de " + c + "?: ");
+	          String ca = s.nextLine();
+	          capitales.put(c, ca); // en lugar de "ca" fue cambiado por capitales.
+ 	          System.out.println("Gracias por enseñarme nuevas capitales");
+	        }
+	      }
+	    } while (!capitales.equals("salir")); //while con h intermedia. Cambie c por capitales.
+	  s.close(); // cierre
+
+	}
+	
+
+}
